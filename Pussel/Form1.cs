@@ -26,16 +26,16 @@ namespace Pussel
         private void Form1_Load(object sender, EventArgs e)
         {
             // Randomiserar bilderna i picturebox 1-4 när appen startar
-            int rng1 = random.Next(0, imageFirst.Length);
-            int rng2 = random.Next(0, imageSecond.Length);
-            int rng3 = random.Next(0, imageThird.Length);
-            int rng4 = random.Next(0, imageFourth.Length);
+            int first = random.Next(0, imageFirst.Length);
+            int second = random.Next(0, imageSecond.Length);
+            int third = random.Next(0, imageThird.Length);
+            int fourth = random.Next(0, imageFourth.Length);
             
             // Sätter alla pictureboxes till olika bilder i början
-            pictureBox1.Image = imageFirst[rng1];
-            pictureBox2.Image = imageSecond[rng2];
-            pictureBox3.Image = imageThird[rng3];
-            pictureBox4.Image = imageFourth[rng4];
+            pictureBox1.Image = imageFirst[first];
+            pictureBox2.Image = imageSecond[second];
+            pictureBox3.Image = imageThird[third];
+            pictureBox4.Image = imageFourth[fourth];
 
             // Gör så att fönstret inte går att ändra storlek på
             this.MinimumSize = new Size(Width, Height);
