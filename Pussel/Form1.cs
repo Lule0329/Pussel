@@ -21,13 +21,25 @@ namespace Pussel
             InitializeComponent();
         }
 
+        private Random random = new Random();
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Randomiserar bilderna i picturebox 1-4 när appen startar
+            int rng1 = random.Next(0, imageFirst.Length);
+            int rng2 = random.Next(0, imageSecond.Length);
+            int rng3 = random.Next(0, imageThird.Length);
+            int rng4 = random.Next(0, imageFourth.Length);
+            
             // Sätter alla pictureboxes till olika bilder i början
-            pictureBox1.Image = imageFirst[first];
-            pictureBox2.Image = imageSecond[second];
-            pictureBox3.Image = imageThird[third];
-            pictureBox4.Image = imageFourth[fourth];
+            pictureBox1.Image = imageFirst[rng1];
+            pictureBox2.Image = imageSecond[rng2];
+            pictureBox3.Image = imageThird[rng3];
+            pictureBox4.Image = imageFourth[rng4];
+
+            // Gör så att fönstret inte går att ändra storlek på
+            this.MinimumSize = new Size(Width, Height);
+            this.MaximumSize = this.MinimumSize;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
